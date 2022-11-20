@@ -5,19 +5,19 @@ jobs:
       - image: 'circleci/node:16.18.1'
     steps:
       - checkout
-      - run: null
-        name: install dependencies
-        command: |
-          npm install
+      - run:
+          name: install dependencies
+          command: |
+            npm install
   test_project:
     docker:
       - image: 'circleci/node:16.18.1'
     steps:
       - checkout
-      - run: null
-        name: test the project
-        command: |
-          npm test
+      - run:
+          name: test the project
+          command: |
+            npm test
 workflows:
   default:
     jobs:
