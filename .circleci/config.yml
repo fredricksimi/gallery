@@ -22,4 +22,6 @@ workflows:
   default:
     jobs:
       - install_dependencies
-      - test_project
+      - test_project:
+        requires: [install_dependencies]
+          
