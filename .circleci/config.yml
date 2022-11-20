@@ -9,19 +9,8 @@ jobs:
           name: install dependencies
           command: |
             npm install
-  test_project:
-    docker:
-      - image: 'cimg/node:16.18.1'
-    steps:
-      - checkout
-      - run:
-          name: test the project
-          command: |
-            npm i mocha
             npm test
 workflows:
   default:
     jobs:
       - install_dependencies
-      - test_project:
-        requires: [install_dependencies]
