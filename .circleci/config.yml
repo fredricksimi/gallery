@@ -3,7 +3,7 @@ commands:
   install_nodejs:
     description: Install Nodejs
     steps:
-      - run:
+      - run: null
         name: Install Node.js
         command: |
           curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
@@ -11,19 +11,19 @@ commands:
 jobs:
   install_dependencies:
     docker:
-      - image: circleci/node:16.18.1
+      - image: 'circleci/node:16.18.1'
     steps:
       - checkout
-      - run:
+      - run: null
         name: install dependencies
         command: |
           npm install
   test_project:
     docker:
-      - image: circleci/node:16.18.1
+      - image: 'circleci/node:16.18.1'
     steps:
       - checkout
-      - run:
+      - run: null
         name: test the project
         command: |
           npm test
