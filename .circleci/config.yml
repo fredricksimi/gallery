@@ -27,3 +27,9 @@ jobs:
         name: test the project
         command: |
           npm test
+
+workflows:
+  default:
+    jobs:
+      - install_dependencies
+      - test_project
