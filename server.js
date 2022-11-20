@@ -7,8 +7,10 @@ const path = require('path');
 let index = require('./routes/index');
 let image = require('./routes/image');
 
+
 // connecting the database
-let mongodb_url = "mongodb+srv://eve:Hellomongo123@cluster0.gtkz0dm.mongodb.net/?retryWrites=true";
+//let mongodb_url = 'mongodb://localhost:27017/';
+let mongodb_url = "mongodb+srv://eve:Hellomongo123@cluster0.gtkz0dm.mongodb.net/?retryWrites=true"
 let dbName = 'darkroom';
 mongoose.connect(`${mongodb_url}${dbName}`,{ useNewUrlParser: true , useUnifiedTopology: true }, (err)=>{
     if (err) console.log(err)
@@ -44,3 +46,5 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT,() =>{
     console.log(`Server is listening at http://localhost:${PORT}`)
 });
+
+module.exports = app;
