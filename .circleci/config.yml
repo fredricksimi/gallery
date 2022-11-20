@@ -25,4 +25,3 @@ workflows:
       - install_dependencies
       - test_project:
         requires: [install_dependencies]
-          
